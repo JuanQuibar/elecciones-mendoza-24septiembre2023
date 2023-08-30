@@ -13,11 +13,10 @@ export default function Home (){
   const [widthSlider, setWidthSlider] = useState(0)
   const [marginLeft, setMarginLeft] = useState(0)
   const [elementsToShow, setElementsToShow] = useState(0)
-  const [prueba, setPrueba] = useState(true)
 
-  const fetcher = () => axios('/api').then(datos => datos.data)
+  const fetcher = () => axios('https://elecciones.s3.amazonaws.com/mendoza/data.json').then(datos => datos.data)
 
-  const { data, error, isLoading } = useSWR('/api', fetcher, { refreshInterval: 1000 })
+  const { data, error, isLoading } = useSWR('https://elecciones.s3.amazonaws.com/mendoza/data.json', fetcher, { refreshInterval: 1000 })
 
   error ? console.log(error) : ''
   isLoading ?   <Spinner />  : ''
