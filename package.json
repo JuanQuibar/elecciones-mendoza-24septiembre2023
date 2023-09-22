@@ -12,7 +12,6 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.1.1",
     "autoprefixer": "10.4.15",
     "axios": "^1.4.0",
     "eslint": "8.47.0",
@@ -26,7 +25,6 @@
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
-    "@types/react": "18.2.21",
-    "prisma": "^5.1.1"
+    "@types/react": "18.2.21"
   }
 }

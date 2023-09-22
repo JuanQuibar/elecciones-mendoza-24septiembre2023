@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gradient-custom {
+    background-image: linear-gradient(#ffff 20%, #5bb3ea 36%, #00549e 80%);
+  }
+.bg-gradient-gober {
+    background-image: linear-gradient(#ffff 20%, #5bb3ea 36%, #00549e 80%);
+  }
+
+.sombra{
+    box-shadow: 2px 2px rgba(82, 82, 82, 0.483);
+}
+/* #dbdbdb */
