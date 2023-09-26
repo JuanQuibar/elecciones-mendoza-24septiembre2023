@@ -18,8 +18,9 @@ function formatearNumero(numero) {
                     }
             `}</style>
 
-        <div className="">
-            <img className="object-cover w-10/12 " src={`/gobernadores/${gobernador.foto}.webp`} alt="Foto candidato" />
+        <div className="w-10/12">
+          <Image width={300} height={300} src={`/gobernadores/${gobernador.foto}.webp`} alt="Foto candidato" />
+            {/* <img className="object-cover w-10/12 " src={`/gobernadores/${gobernador.foto}.webp`} alt="Foto candidato" /> */}
         </div>
 
         <div className="px-2 border-t-2 border-t-white pt-3 pb-5 ">

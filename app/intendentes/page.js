@@ -4,6 +4,11 @@ import useSWR from "swr"
 import axios from 'axios'
 import Departamento from "../../components/Departamento"
 
+
+/* onClick={() => marginLeft !== -widthCards*(11-elementsToShow) ? setMarginLeft((marginLeft)-widthCards) : ''}  */
+
+/* className={marginLeft !== -widthCards*(11-elementsToShow) ? 'text-black' : 'text-slate-400'} */
+
 export default function Home (){
 
     const [widthCards, setWidthCards] = useState(0)
@@ -21,13 +26,12 @@ export default function Home (){
   useEffect(() => { 
 
     
-    
     let widthContainer = document.getElementById('sliderContainer').clientWidth;
     
     let toShow =    widthContainer > 1600 ? 5 :  
                     widthContainer >= 1025 ? 4:
                     widthContainer >= 768 ? 3: 
-                    widthContainer >= 640 ? 2: 
+                    widthContainer >= 640 ? 2:  
                     widthContainer < 640 ? 1:
                             '';
 
@@ -38,10 +42,9 @@ export default function Home (){
 
   }, [widthCards, elementsToShow]);
 
-
   return (
       <section className='mt-4 mb-4'>
-        <div className=" bg-[#ffff]  flex flex-col justify-between h-[530px] xl:h-[560px]">
+        <div className=" bg-[#ffff]  flex flex-col justify-between h-[570px] sm:h-[560px]">
         
             <div id="sliderContainer" className="w-full lg:w-full overflow-hidden">
                 
@@ -86,9 +89,9 @@ export default function Home (){
                 </button>
 
                 <button 
-                    onClick={() => marginLeft !== -widthCards*(11-elementsToShow) ? setMarginLeft((marginLeft)-widthCards) : ''} 
-
-                    className={marginLeft !== -widthCards*(11-elementsToShow) ? 'text-black' : 'text-slate-400'}
+                    onClick={ ()=> marginLeft > (-widthCards*(11-elementsToShow) -10) && marginLeft < (-widthCards*(11-elementsToShow) +10)  ? '' : setMarginLeft((marginLeft)-widthCards) }
+                    
+                    className={ marginLeft > (-widthCards*(11-elementsToShow) -10) && marginLeft < (-widthCards*(11-elementsToShow) +10) ? 'text-slate-400' : 'text-black' }
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12">
                     <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clipRule="evenodd" />

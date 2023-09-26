@@ -12,4 +12,7 @@
 .sombra{
     box-shadow: 2px 2px rgba(82, 82, 82, 0.483);
 }
+body{
+  transform: scale(1)
+}
 /* #dbdbdb */

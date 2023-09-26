@@ -32,15 +32,13 @@ export default function Home (){
                         
     setWidthCards((widthContainer)/(elementsToShow))
     setWidthSlider(5*widthCards + "px")
-    //setMesas(data[0])
-    
 
   }, [widthCards, elementsToShow]);
 
   
   return (
       <section className='mt-4 mb-4 '>
-        <div className=" bg-[#ffff] flex flex-col justify-between h-[530px] xl:h-[560px]">
+        <div className=" bg-[#ffff] flex flex-col justify-between h-[570px] sm:h-[560px] border-r">
             
             <div id="sliderContainer" className="w-full lg:w-full overflow-hidden">
 

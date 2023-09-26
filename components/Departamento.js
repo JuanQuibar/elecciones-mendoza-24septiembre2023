@@ -2,6 +2,7 @@ import Image from "next/image"
 
 const Departamento3 = ({departamento, widthCards}) => {
 const candidatos = departamento.candidatos.sort((a, b) => b.porcentaje - a.porcentaje)
+const nombreCandidato = candidatos[0].nombre.trim().split(" ",3)
 
 function formatearNumero(numero) {
     const numeroRedondeado = numero.toFixed(1);
@@ -26,21 +27,23 @@ function formatearNumero(numero) {
                     <p className="text-[#00549e] uppercase leading-tight font-[700] text-right  ">{departamento.nombre} </p>
                     <div className="flex uppercase items-center text-[#606060  ">
                         <p className="text-[12px] md:text-xs leading-tight font-[500] text-right mr-1 ">escrutadas</p>
-                        <p className="leading-tight text-[20px] md:text-xs font-[700] ">| {Math.round(departamento.escrutadas)} </p>
+                        <p className="leading-tight text-[20px] md:text-xs font-[700] ">| {Math.round(departamento.escrutadas)}<span className="font-[400]">%</span> </p>
 
                     </div>
                 </div>
             
 
             {/* Nombre, porcentaje y foto */}
-            {/* <div className="h-4 "></div> */}
             <div className="flex  items-end">
-                <div className="w-1/2 flex flex-col justify-end  ">
-                    <img className="object-cover " src={`/intendentes/${candidatos[0].foto}.webp`} alt="Foto candidato" />
+
+                <div className="w-1/2 flex flex-col justify-end object-cover  ">
+                    <Image width={150} height={150} src={`/intendentes/${candidatos[0].foto}.webp`} alt="Foto candidato" />
+                    
                 </div>
-                <div className=" flex flex-col items-start justify-end z-10 ml-2 h-full  pb-1">
-                    <h2 className="text-[40px] xl:text-[60px]   -mb-1 mr-2 text-white font-[900] md:leading-normal">{formatearNumero(candidatos[0].porcentaje)}<span className="font-[500]" >%</span></h2>
-                    <h3 className="uppercase md:text-sm lg:text-[16px] md:leading-tight font-[700] text-white leading-none mr-1">{candidatos[0].nombre} </h3>
+
+                <div className=" flex flex-col items-start justify-end z-10 ml-2 h-full pb-1">
+                    <h2 className="text-[40px] xl:text-[60px] -mb-1 mr-2 text-white font-[900] md:leading-normal">{formatearNumero(candidatos[0].porcentaje)}<span className="font-[500]" >%</span></h2>
+                    <h3 className="uppercase md:text-sm lg:text-[16px] md:leading-tight font-[700] text-white leading-none mr-1">{nombreCandidato[0]} <br /> {nombreCandidato[1]} {nombreCandidato[2]} </h3>
                 </div>
 
             </div>

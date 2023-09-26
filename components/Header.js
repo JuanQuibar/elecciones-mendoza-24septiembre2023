@@ -7,7 +7,7 @@ const Header = () => {
 
     return(
 
-        <nav className='pl-3 flex gap-3 uppercase mt-3 md:text-[22px] font-[400] text-[#606060]  '>
+        <nav className='pl-3 flex gap-3 uppercase mt-5 md:text-[22px] font-[400] text-[#606060]  '>
 
             <Link href='/' className={pathname === '/' ? 'font-[900] text-[#00549e] border-b-2 border-b-[#00549e]' : '' } >
                 <p className=''>gobernadores</p>
